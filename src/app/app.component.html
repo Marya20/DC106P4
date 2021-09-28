@@ -1,0 +1,33 @@
+<br><br><br>
+<div class="container col-7">
+  <div class="main-body shadow">
+              <div class="card">
+                  <div class="card-header">
+                    <h2>{{title}}
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
+                      <button class="btn btn-outline-info col-sm-1" (click)="sortM" >M</button> &nbsp;
+                      <button class="btn btn-outline-info col-sm-1 " (click)="sortF">F</button> &nbsp;
+                      <button class="btn btn-outline-info col-sm-1" >A</button> &nbsp;
+                      </h2>
+                  </div>
+                  <div class="card-body">
+                    <table class="table ">
+                      <thead class="thead-dark text-center">
+                        <tr>
+                          <th>Name</th>
+                          <th>Age</th>
+                          <th>Gender</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                        <tr *ngFor="let data of participants">
+                          <td>{{data.name}}</td>
+                          <td>{{data.age}}</td>
+                          <td>{{data.gender}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+      </div>
+</div>

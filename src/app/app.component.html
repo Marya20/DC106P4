@@ -5,9 +5,9 @@
                   <div class="card-header">
                     <h2>{{title}}
                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; 
-                      <button class="btn btn-outline-info col-sm-1" (click)="sortM" >M</button> &nbsp;
-                      <button class="btn btn-outline-info col-sm-1 " (click)="sortF">F</button> &nbsp;
-                      <button class="btn btn-outline-info col-sm-1" >A</button> &nbsp;
+                      <button class="btn btn-outline-info col-sm-1" (click)="G('Male')" >M</button> &nbsp;
+                      <button class="btn btn-outline-info col-sm-1 " (click)="G('Female')">F</button> &nbsp;
+                      <button class="btn btn-outline-info col-sm-1" (click)="showAll()">A</button> &nbsp;
                       </h2>
                   </div>
                   <div class="card-body">
@@ -20,10 +20,10 @@
                         </tr>
                       </thead>
                       <tbody class="text-center">
-                        <tr *ngFor="let data of participants">
-                          <td>{{data.name}}</td>
-                          <td>{{data.age}}</td>
-                          <td>{{data.gender}}</td>
+                        <tr *ngFor="let participant of display">
+                          <td>{{participant.name}}</td>
+                          <td>{{participant.age}}</td>
+                          <td>{{participant.gender}}</td>
                         </tr>
                       </tbody>
                     </table>

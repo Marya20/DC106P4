@@ -1,32 +1,29 @@
 import { Component } from '@angular/core';
+import { AppData } from './app.data';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
-  title = 'List of Participants';
 
-  participants = [
-    {name: "Mary", age:22, gender:"Female"},
-    {name: "Luke", age:20, gender:"Male"},
-    {name: "Samatha", age:15, gender:"Female"},
-    {name: "Jacob", age:19, gender:"Male"},
-    {name: "Nicole", age:21, gender:"Female"},
-  ];
+  title = "List of Participants"
+  participants;
+  display;
 
-constructor(){
-  console.log(this.participants);
-}
+  constructor (service: AppData){
+    this.display = this.participants = service.getParticipants()
+  }
 
-sortM(){
+  showAll(){
+    this.display = this.participants
+  }
 
-}
-
-sortF(){
+ G(gender: string){
+    this.display = this.participants.filter(participant => participant.gender === gender)
+  }
 
 }
-  
-}
-
-
